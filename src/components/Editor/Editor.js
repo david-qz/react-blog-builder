@@ -5,7 +5,8 @@ import './Editor.css';
 export default function Editor({
   title, setTitle,
   subtitle, setSubtitle,
-  font, setFont
+  font, setFont,
+  setAlignment
 }) {
   return (
     <div className="editor">
@@ -32,9 +33,9 @@ export default function Editor({
       </div>
       <div className="form-control">
         <label>Alignment</label>
-        <div className="radio-group">
+        <div className="radio-group" onChange={(e) => setAlignment(e.target.value)}>
           <label>
-            <input name="align" type="radio" value="left" />
+            <input name="align" type="radio" value="left" defaultChecked />
             <i className="ri-align-left"></i>
           </label>
           <label>
